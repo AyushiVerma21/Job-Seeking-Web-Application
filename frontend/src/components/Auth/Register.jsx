@@ -47,7 +47,6 @@ const Register = () => {
     return <Navigate to={'/'}/>
   }
 
-
   return (
     <>
       <section className="authPage">

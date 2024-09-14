@@ -1,5 +1,14 @@
 import app from "./app.js";
 import cloudinary from "cloudinary";
+import cors from 'cors';
+
+app.use(cors());
+
+app.use(cors({
+	origin: 'http://localhost:5173', 
+	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+	credentials: true 
+  }));
 
 cloudinary.v2.config({
 	cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
@@ -8,5 +17,6 @@ cloudinary.v2.config({
 });
 
 app.listen(process.env.PORT, () => {
+	// <h1>HIIIII</h1>
 	console.log(`Server running on port ${process.env.PORT}`);
 });

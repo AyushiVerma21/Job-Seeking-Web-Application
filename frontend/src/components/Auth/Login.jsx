@@ -26,13 +26,16 @@ const Login = () => {
           },
           withCredentials: true,
         }
+        // console.log(data);
       );
+      console.log(data);
       toast.success(data.message);
       setEmail("");
       setPassword("");
       setRole("");
       setIsAuthorized(true);
     } catch (error) {
+      console.log("HIIIIIIIIIIIIIIIIIIIIIIII");
       toast.error(error.response.data.message);
     }
   };
